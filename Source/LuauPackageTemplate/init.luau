@@ -1,0 +1,3 @@
+local LuauPackageTemplate = {}
+
+return LuauPackageTemplate
