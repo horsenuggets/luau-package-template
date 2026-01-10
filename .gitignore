@@ -10,6 +10,7 @@
 *.rbxm
 *.rbxmx
 Build
+DevPackages
 Packages
 sourcemap.json
 Tools

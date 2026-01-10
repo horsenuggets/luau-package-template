@@ -1,6 +1,9 @@
 {
     "name": "luau-package-template",
     "tree": {
-        "$path": "Source/LuauPackageTemplate"
+        "$path": "Source/LuauPackageTemplate",
+        "Packages": {
+            "$path": "Packages"
+        }
     }
 }
