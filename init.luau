@@ -1,1 +1,1 @@
-return require("./luau-package-template/Source/LuauPackageTemplate")
+return require("@self/Source/LuauPackageTemplate")
