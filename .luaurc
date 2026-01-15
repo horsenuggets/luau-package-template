@@ -21,7 +21,6 @@
         "fit",
         "game",
         "getfenv",
-        "it",
         "plugin",
         "PluginManager",
         "printidentity",
