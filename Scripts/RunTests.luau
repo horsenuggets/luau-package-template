@@ -13,7 +13,6 @@ name as an argument to run only that test suite.
 
 local Testable = require("@devpackages/Testable")
 local process = require("@lune/process")
-local stdio = require("@lune/stdio")
 
 local TESTS = {
     { Name = "ExampleTest", Func = require("../Tests/ExampleTest.spec") },
@@ -32,10 +31,10 @@ local function runTests()
         end
 
         if #testsToRun == 0 then
-            stdio.ewrite(`No test suite found with name "{filterName}".\n`)
-            stdio.ewrite("Available test suites:\n")
+            print(`No test suite found with name "{filterName}".`)
+            print("Available test suites:")
             for _, test in TESTS do
-                stdio.ewrite(`  - {test.Name}\n`)
+                print(`- {test.Name}`)
             end
             process.exit(1)
         end
