@@ -17,6 +17,7 @@ local function lint()
 		"analyze",
 		"--platform=lune",
 		"--no-flags-enabled",
+		"--enable-new-solver",
 		"--ignore=DevPackages/**",
 		"--ignore=Packages/**",
 		"--ignore=Submodules/**",
