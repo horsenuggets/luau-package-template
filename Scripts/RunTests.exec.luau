@@ -16,7 +16,7 @@ const process = require("@lune/process")
 const RunTests = {}
 
 function RunTests.test()
-    const _, passed = Testable.run(script.Parent.Parent.Tests)
+    const _, passed = Testable.run(project.Tests)
     process.exit(if passed then 0 else 1)
 end
 
@@ -24,7 +24,7 @@ function RunTests.exec()
     Testable.configure({
         Coverage = true,
         CoverageThreshold = 0,
-        CoverageRoots = script.Parent.Parent.Source,
+        CoverageRoots = project.Source,
     })
     RunTests.test()
 end
