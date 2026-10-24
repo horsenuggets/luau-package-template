@@ -2,24 +2,31 @@
 
 --[[
 
-RunTests
+RunTests.exec
 
 Executes all test suites and exits with appropriate status code.
 
+[Usage] ./Scripts/RunTests.exec.luau
+
 --]]
 
-local Testable = require("@devpackages/Testable")
-local process = require("@lune/process")
+const Testable = require("@devpackages/Testable")
+const process = require("@lune/process")
 
-Testable.configure({
-	Coverage = true,
-	CoverageThreshold = 0,
-	CoverageRoots = script.Parent.Parent.Source,
-})
+const RunTests = {}
 
-local function runTests()
-	local _, passed = Testable.run(script.Parent.Parent.Tests)
-	process.exit(if passed then 0 else 1)
+function RunTests.test()
+    const _, passed = Testable.run(script.Parent.Parent.Tests)
+    process.exit(if passed then 0 else 1)
 end
 
-runTests()
+function RunTests.exec()
+    Testable.configure({
+        Coverage = true,
+        CoverageThreshold = 0,
+        CoverageRoots = script.Parent.Parent.Source,
+    })
+    RunTests.test()
+end
+
+RunTests.exec()

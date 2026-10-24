@@ -2,14 +2,18 @@
 
 --[[
 
-Lint
+Lint.exec
 
 Runs luau-lsp analyze to report type errors and deprecation warnings.
 
-[Usage] ./Scripts/Lint.luau
+[Usage] ./Scripts/Lint.exec.luau
 
 --]]
 
-local Lint = require("../Submodules/luau-cicd/Scripts/Helpers/Lint")
+const Lint = {}
 
-Lint.run()
+function Lint.exec()
+    require("@submodules/luau-cicd/Scripts/Helpers/Lint").run()
+end
+
+Lint.exec()
