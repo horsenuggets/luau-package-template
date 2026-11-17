@@ -6,6 +6,9 @@ Example test to demonstrate the testing framework.
 
 --]]
 
+const Testable = require("@devpackages/Testable")
+const expect, it = Testable.expect, Testable.it
+
 return function()
     it("should pass a basic assertion", function()
         expect(1 + 1).to.equal(2)
